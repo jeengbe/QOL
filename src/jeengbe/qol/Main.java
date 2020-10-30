@@ -13,5 +13,6 @@ public class Main extends JavaPlugin implements Listener {
     rand = new Random();
     getServer().getPluginManager().registerEvents(this, this);
     getServer().getPluginManager().registerEvents(new CreeperChainListener(), this);
+    getServer().getPluginManager().registerEvents(new KeepNamedListener(), this);
   }
 }
