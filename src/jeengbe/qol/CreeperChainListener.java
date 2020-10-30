@@ -9,7 +9,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 /**
- * Causes a chain reaction of exploding creepers on Normal or Hard Difficulty
+ * Creeper explosions create a chain reaction on Normal or Hard Difficulty
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/irammk/in_hard_mode_when_the_explosion_of_a_creeper_hits/}
  */
 public class CreeperChainListener implements Listener {
