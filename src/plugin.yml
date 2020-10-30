@@ -1,0 +1,7 @@
+name: QOL
+version: 1.0
+description: QOL-Stuff for a survival server
+author: Jeengbe
+
+main: jeengbe.qol.Main
+api-version: 1.15
