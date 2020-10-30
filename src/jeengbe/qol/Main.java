@@ -16,6 +16,7 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new KeepNamedListener(), this);
     getServer().getPluginManager().registerEvents(new ExplosionYieldListener(), this);
     getServer().getPluginManager().registerEvents(new DeathCompassListener(this), this);
-    getServer().getPluginManager().registerEvents(new NoFeatherTrample(), this);
+    getServer().getPluginManager().registerEvents(new NoFeatherTrampleListener(), this);
+    getServer().getPluginManager().registerEvents(new EndTotemListener(), this);
   }
 }

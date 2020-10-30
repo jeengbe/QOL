@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
  * Feather Falling prevents trampling Farm Land
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/9drs9h/feather_falling_should_prevent_farmland_from/}
  */
-public class NoFeatherTrample implements Listener {
+public class NoFeatherTrampleListener implements Listener {
   @EventHandler
   public void onTrample(PlayerInteractEvent e) {
     if (e.getAction() != Action.PHYSICAL)
