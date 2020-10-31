@@ -17,7 +17,7 @@ import net.minecraft.server.v1_16_R2.EntityFallingBlock;
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/50a50s/falling_anvils_should_break_leaves/}
  */
 public class AnvilSmash implements Listener {
-  private Material[] BREAKABLE = new Material[] { Material.ACACIA_LEAVES, Material.BIRCH_LEAVES, Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.JUNGLE_LEAVES, Material.OAK_LEAVES, Material.SPRUCE_LEAVES };
+  private Material[] BREAKABLE = new Material[] { Material.ACACIA_LEAVES, Material.BIRCH_LEAVES, Material.DARK_OAK_LEAVES, Material.JUNGLE_LEAVES, Material.JUNGLE_LEAVES, Material.OAK_LEAVES, Material.SPRUCE_LEAVES, Material.GLASS, Material.GLASS_PANE, Material.ICE };
   private Material[] ANVILS    = new Material[] { Material.ANVIL, Material.CHIPPED_ANVIL, Material.DAMAGED_ANVIL };
 
   @EventHandler
