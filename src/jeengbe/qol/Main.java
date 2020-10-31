@@ -23,5 +23,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new ShovelGong(), this);
     getServer().getPluginManager().registerEvents(new NoFriendSweep(), this);
     getServer().getPluginManager().registerEvents(new NetherSmokeGrenade(), this);
+    getServer().getPluginManager().registerEvents(new TrickSkeleton(), this);
   }
 }
