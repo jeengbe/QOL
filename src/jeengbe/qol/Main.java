@@ -7,10 +7,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
   public static Random rand;
+  public static Main   me;
 
   @Override
   public void onEnable() {
     rand = new Random();
+    me   = this;
     getServer().getPluginManager().registerEvents(this, this);
     getServer().getPluginManager().registerEvents(new CreeperChain(), this);
     getServer().getPluginManager().registerEvents(new KeepNamed(), this);
@@ -26,5 +28,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new TrickSkeleton(), this);
     getServer().getPluginManager().registerEvents(new AnvilSmash(), this);
     getServer().getPluginManager().registerEvents(new AnvilSpongeDry(), this);
+    // getServer().getPluginManager().registerEvents(new VillagerDogs(), this);
   }
 }
