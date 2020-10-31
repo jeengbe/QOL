@@ -21,5 +21,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new NoCampfireSpawnpoint(), this);
     getServer().getPluginManager().registerEvents(new NoBedGlide(), this);
     getServer().getPluginManager().registerEvents(new ShovelGong(), this);
+    getServer().getPluginManager().registerEvents(new NoFriendSweep(), this);
   }
 }
