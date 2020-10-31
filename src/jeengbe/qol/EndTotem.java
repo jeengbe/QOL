@@ -21,7 +21,7 @@ import net.minecraft.server.v1_16_R2.PacketPlayOutEntityStatus;
  * Totem prevents falling into the void
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/815oon/if_you_fall_into_the_void_with_a_totem_in_your/}
  */
-public class EndTotemListener implements Listener {
+public class EndTotem implements Listener {
   @EventHandler
   public void onResurrect(EntityDamageEvent e) {
     Entity ent = e.getEntity();

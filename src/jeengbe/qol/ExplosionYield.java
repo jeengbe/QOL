@@ -7,7 +7,7 @@ import org.bukkit.event.entity.EntityExplodeEvent;
 /**
  * Explosions yield 100% of destroyed blocks
  */
-public class ExplosionYieldListener implements Listener {
+public class ExplosionYield implements Listener {
   @EventHandler
   public void onExplode(EntityExplodeEvent e) {
     e.setYield(1.0f);

@@ -12,13 +12,13 @@ public class Main extends JavaPlugin implements Listener {
   public void onEnable() {
     rand = new Random();
     getServer().getPluginManager().registerEvents(this, this);
-    getServer().getPluginManager().registerEvents(new CreeperChainListener(), this);
-    getServer().getPluginManager().registerEvents(new KeepNamedListener(), this);
-    getServer().getPluginManager().registerEvents(new ExplosionYieldListener(), this);
-    getServer().getPluginManager().registerEvents(new DeathCompassListener(this), this);
-    getServer().getPluginManager().registerEvents(new NoFeatherTrampleListener(), this);
-    getServer().getPluginManager().registerEvents(new EndTotemListener(), this);
-    getServer().getPluginManager().registerEvents(new NoCampfireSpawnpointListener(), this);
+    getServer().getPluginManager().registerEvents(new CreeperChain(), this);
+    getServer().getPluginManager().registerEvents(new KeepNamed(), this);
+    getServer().getPluginManager().registerEvents(new ExplosionYield(), this);
+    getServer().getPluginManager().registerEvents(new DeathCompass(this), this);
+    getServer().getPluginManager().registerEvents(new NoFeatherTrample(), this);
+    getServer().getPluginManager().registerEvents(new EndTotem(), this);
+    getServer().getPluginManager().registerEvents(new NoCampfireSpawnpoint(), this);
     getServer().getPluginManager().registerEvents(new NoBedGlide(), this);
   }
 }

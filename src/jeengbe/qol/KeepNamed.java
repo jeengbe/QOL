@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 /**
  * Named items do not despawn natuarlly on death
  */
-public class KeepNamedListener implements Listener {
+public class KeepNamed implements Listener {
   @EventHandler
   public void onDeath(PlayerDeathEvent e) {
     List<ItemStack> live = new ArrayList<>();

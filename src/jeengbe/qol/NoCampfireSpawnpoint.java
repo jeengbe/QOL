@@ -18,7 +18,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
  * <b>Bug: </b>It force-sets the player's bed spawn location, causing them to respawn
  * there although the bed may be destroyed.
  */
-public class NoCampfireSpawnpointListener implements Listener {
+public class NoCampfireSpawnpoint implements Listener {
   private Material[]              BEDS         = new Material[] { Material.WHITE_BED, Material.ORANGE_BED, Material.PURPLE_BED, Material.LIGHT_BLUE_BED, Material.YELLOW_BED, Material.LIME_BED, Material.PINK_BED, Material.GRAY_BED, Material.LIGHT_GRAY_BED, Material.CYAN_BED, Material.PURPLE_BED, Material.BLUE_BED, Material.BROWN_BED, Material.GREEN_BED, Material.RED_BED, Material.BLACK_BED };
   private HashMap<UUID, Location> bedLocations = new HashMap<>();
 

@@ -22,13 +22,13 @@ import org.bukkit.inventory.meta.CompassMeta;
  * Craftable compass pointing to the crafter's death location
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/97qpbj/crafting_a_totem_with_a_compass_makes_it_point_to/}
  */
-public class DeathCompassListener implements Listener {
+public class DeathCompass implements Listener {
   private HashMap<UUID, Location> deathLocations     = new HashMap<>();
 
   public static Integer           COMPASS_MODEL_DATA = 1;
   private ItemStack               compassItem;
 
-  public DeathCompassListener(Main main) {
+  public DeathCompass(Main main) {
     compassItem = new ItemStack(Material.COMPASS);
     CompassMeta compassMeta = (CompassMeta) compassItem.getItemMeta();
     compassMeta.setCustomModelData(COMPASS_MODEL_DATA);
