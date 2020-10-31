@@ -29,5 +29,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new AnvilSmash(), this);
     getServer().getPluginManager().registerEvents(new AnvilSpongeDry(), this);
     // getServer().getPluginManager().registerEvents(new VillagerDogs(), this);
+    getServer().getPluginManager().registerEvents(new OcelotSilverfishAttack(), this);
   }
 }
