@@ -63,8 +63,6 @@ public class FleeDamager implements Listener {
       nmsEntity.goalSelector.a(panicGoal);
       nmsEntity.goalSelector.a(panicGoalWrapper.h(), new PathfinderGoalAvoidDamager(nmsEntity, 5F, (Double) fieldSpeed.get(panicGoal)));
     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
-      System.out.println(nmsEntity);
-      nmsEntity.goalSelector.getTasks().stream().forEach(goal -> System.out.println(goal.getGoal().getClass().getName()));
       e.printStackTrace();
     }
   }
@@ -88,42 +86,43 @@ class PathfinderGoalAvoidDamager extends PathfinderGoal {
     a(EnumSet.of(PathfinderGoal.Type.TARGET));
   }
 
-  // shouldExecute
   @Override
   public boolean a() {
     if (this.entity.getLastDamager() == null)
       return false;
     if (this.entity.h(this.entity.getLastDamager()) > this.avoidDistance * this.avoidDistance)
       return false;
-    Vec3D target = RandomPositionGenerator.c(this.entity, 16, 7, this.entity.getLastDamager().getPositionVector());
-    if (target == null)
-      return false;
-    if (this.entity.getLastDamager().h(target.x, target.y, target.z) < this.entity.h(this.entity.getLastDamager()))
-      return false;
+
+    Vec3D target;
+    int c = 0;
+    do {
+      target = RandomPositionGenerator.c(this.entity, 16, 7, this.entity.getLastDamager().getPositionVector());
+      if (target == null)
+        return false;
+      if (c++ > 100)
+        throw new RuntimeException("c > 100");
+    } while (this.entity.getLastDamager().h(target.x, target.y, target.z) < this.entity.h(this.entity.getLastDamager()));
+
     this.pathEntity = this.navigationAbstract.a(target.x, target.y, target.z, 0);
     return (this.pathEntity != null);
   }
 
-  // shouldContinue
   @Override
   public boolean b() {
     return this.entity.getLastDamager() != null && !this.navigationAbstract.m() && this.entity.h(this.entity.getLastDamager()) < this.avoidDistance * this.avoidDistance;
   }
 
-  // startExecute
   @Override
   public void c() {
     this.timeToReaclcPath = 0;
     this.navigationAbstract.a(this.pathEntity, this.b);
   }
 
-  // reset
   @Override
   public void d() {
     this.pathEntity = null;
   }
 
-  // tick
   @Override
   public void e() {
     if (this.entity.getLastDamager() != null) {
