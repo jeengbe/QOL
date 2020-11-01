@@ -31,5 +31,6 @@ public class Main extends JavaPlugin implements Listener {
     // getServer().getPluginManager().registerEvents(new VillagerDogs(), this);
     getServer().getPluginManager().registerEvents(new OcelotSilverfishAttack(), this);
     getServer().getPluginManager().registerEvents(new FreeDog(), this);
+    getServer().getPluginManager().registerEvents(new ColorfulJoinQuit(), this);
   }
 }
