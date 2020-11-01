@@ -63,6 +63,8 @@ public class FleeDamager implements Listener {
       nmsEntity.goalSelector.a(panicGoal);
       nmsEntity.goalSelector.a(panicGoalWrapper.h(), new PathfinderGoalAvoidDamager(nmsEntity, 5F, (Double) fieldSpeed.get(panicGoal)));
     } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
+      System.out.println(nmsEntity);
+      nmsEntity.goalSelector.getTasks().stream().forEach(goal -> System.out.println(goal.getGoal().getClass().getName()));
       e.printStackTrace();
     }
   }

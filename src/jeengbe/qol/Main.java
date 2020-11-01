@@ -34,5 +34,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new ColorfulJoinQuit(), this);
     getServer().getPluginManager().registerEvents(new HerdFlee(), this);
     getServer().getPluginManager().registerEvents(new FleeDamager(), this);
+    getServer().getPluginManager().registerEvents(new EndermanMourn(), this);
   }
 }
