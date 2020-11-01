@@ -13,6 +13,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
 import net.minecraft.server.v1_16_R2.EntityInsentient;
+import net.minecraft.server.v1_16_R2.PathfinderGoal;
 import net.minecraft.server.v1_16_R2.PathfinderGoalPanic;
 
 /**
@@ -32,14 +33,14 @@ public class HerdFlee implements Listener {
     if (!Arrays.stream(PANICKING).anyMatch(entityType -> e.getEntity().getType() == entityType))
       return;
 
-    Collection<Entity> nearby = e.getEntity().getWorld().getNearbyEntitiesByType(e.getEntity().getClass(), e.getEntity().getLocation(), 5, 4, 5);
+    Collection<Entity> nearby = e.getEntity().getWorld().getNearbyEntities(e.getEntity().getLocation(), 10, 5, 10, entity -> Arrays.stream(PANICKING).anyMatch(entityType -> entity.getType() == entityType));
     nearby.forEach(entity -> {
       EntityInsentient nmsEntity = (EntityInsentient) ((CraftLivingEntity) entity).getHandle();
-      nmsEntity.goalSelector.getTasks().stream().filter(goal -> goal.getGoal() instanceof PathfinderGoalPanic).forEach(goal -> {
-        if (nmsEntity.getLastDamager() != null)
+      nmsEntity.goalSelector.getTasks().stream().filter(goal -> goal.getGoal() instanceof PathfinderGoalPanic || goal.getGoal() instanceof PathfinderGoalAvoidDamager).forEach(goal -> {
+        if (nmsEntity.getLastDamager() != null && !nmsEntity.getLastDamager().getUniqueID().equals(((CraftLivingEntity) e.getDamager()).getHandle().getUniqueID()))
           return;
         nmsEntity.setLastDamager(((CraftLivingEntity) e.getDamager()).getHandle());
-        PathfinderGoalPanic panicGoal = ((PathfinderGoalPanic) goal.getGoal());
+        PathfinderGoal panicGoal = goal.getGoal();
         if (panicGoal.a()) {
           panicGoal.c();
         }

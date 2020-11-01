@@ -33,5 +33,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new FreeDog(), this);
     getServer().getPluginManager().registerEvents(new ColorfulJoinQuit(), this);
     getServer().getPluginManager().registerEvents(new HerdFlee(), this);
+    getServer().getPluginManager().registerEvents(new FleeDamager(), this);
   }
 }
