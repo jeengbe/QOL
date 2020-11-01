@@ -73,7 +73,9 @@ class PathfinderGoalEndermanMourn extends PathfinderGoal {
     this.entity.setAggressive(true);
     List<? extends EntityHuman> players = this.dragon.world.getPlayers();
     players.removeIf(ent -> !IEntitySelector.f.test(ent));
-    this.entity.setLastDamager(players.get(this.dragon.world.random.nextInt(players.size())));
+    if (players.size() > 0) {
+      this.entity.setLastDamager(players.get(this.dragon.world.random.nextInt(players.size())));
+    }
     this.dragon = null;
   }
 
