@@ -3,6 +3,7 @@ package jeengbe.qol;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 
 import org.bukkit.craftbukkit.v1_16_R2.entity.CraftLivingEntity;
@@ -82,6 +83,7 @@ class PathfinderGoalAvoidDamager extends PathfinderGoal {
     this.avoidDistance      = avoidDistance;
     this.b                  = avoidSpeed;
     this.navigationAbstract = entity.getNavigation();
+    a(EnumSet.of(PathfinderGoal.Type.TARGET));
   }
 
   // shouldExecute
