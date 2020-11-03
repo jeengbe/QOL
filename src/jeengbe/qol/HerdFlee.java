@@ -18,6 +18,7 @@ import net.minecraft.server.v1_16_R2.PathfinderGoalPanic;
 
 /**
  * Attacking an animal causes all similar animals nearby to panic
+ * {@link https://www.reddit.com/r/minecraftsuggestions/comments/8v9haa/when_an_animal_gets_hurt_by_a_player_not_only_the/}
  */
 public class HerdFlee implements Listener {
   private EntityType[] PANICKING = new EntityType[] { EntityType.CHICKEN, EntityType.COW, EntityType.TROPICAL_FISH, EntityType.PUFFERFISH, EntityType.HORSE, EntityType.LLAMA, EntityType.TRADER_LLAMA, EntityType.PARROT, EntityType.PIG, EntityType.SHEEP, EntityType.STRIDER, EntityType.WANDERING_TRADER };
