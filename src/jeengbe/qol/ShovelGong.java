@@ -13,7 +13,7 @@ import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.inventory.PlayerInventory;
 
 /**
- * Shovels make a GONG-Sound when hitting an entity with it.
+ * Shovels make a GONG-Sound when hitting an entity with it
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/4no4l2/shovels_make_a_gong_sound_when_striking_a_player/}
  */
 public class ShovelGong implements Listener {
