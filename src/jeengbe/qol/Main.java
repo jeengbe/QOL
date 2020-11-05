@@ -37,5 +37,6 @@ public class Main extends JavaPlugin implements Listener {
     getServer().getPluginManager().registerEvents(new EndermanMourn(), this);
     getServer().getPluginManager().registerEvents(new InfinityRemove(), this);
     getServer().getPluginManager().registerEvents(new CreeperRun(), this);
+    getServer().getPluginManager().registerEvents(new WaterBottleExtinguish(), this);
   }
 }
