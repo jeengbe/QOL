@@ -12,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
+import jeengbe.qol.ai.PathfinderGoalAvoidDamager;
 import net.minecraft.server.v1_16_R2.EntityInsentient;
 import net.minecraft.server.v1_16_R2.PathfinderGoal;
 import net.minecraft.server.v1_16_R2.PathfinderGoalPanic;

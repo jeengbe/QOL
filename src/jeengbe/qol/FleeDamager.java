@@ -1,6 +1,5 @@
 package jeengbe.qol;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +14,7 @@ import org.bukkit.event.world.ChunkLoadEvent;
 
 import jeengbe.qol.ai.PathfinderGoalAvoidDamager;
 import net.minecraft.server.v1_16_R2.EntityCreature;
+import net.minecraft.server.v1_16_R2.GenericAttributes;
 import net.minecraft.server.v1_16_R2.PathfinderGoal;
 import net.minecraft.server.v1_16_R2.PathfinderGoalPanic;
 import net.minecraft.server.v1_16_R2.PathfinderGoalWrapped;
@@ -47,19 +47,12 @@ public class FleeDamager implements Listener {
 
   private void patchAI(Entity entity) {
     EntityCreature nmsEntity = (EntityCreature) ((CraftLivingEntity) entity).getHandle();
-    PathfinderGoalWrapped panicGoalWrapper = nmsEntity.goalSelector.getTasks().stream().filter(goal -> goal.getGoal().getClass().getName().equals(PathfinderGoalPanic.class.getName()) || goal.getGoal().getClass().getName().equals(PathfinderGoalAvoidDamager.class.getName())).findFirst().orElseGet(() -> null);
+    PathfinderGoalWrapped panicGoalWrapper = nmsEntity.goalSelector.getTasks().stream().filter(goal -> goal.getGoal() instanceof PathfinderGoalPanic).findFirst().orElseGet(() -> null);
     if (panicGoalWrapper == null)
       return;
     PathfinderGoal panicGoal = panicGoalWrapper.getGoal();
 
-    Field fieldSpeed;
-    try {
-      fieldSpeed = panicGoal.getClass().getDeclaredField("b");
-      fieldSpeed.setAccessible(true);
-      nmsEntity.goalSelector.a(panicGoal);
-      nmsEntity.goalSelector.a(panicGoalWrapper.h(), new PathfinderGoalAvoidDamager(nmsEntity, 5F, (Double) fieldSpeed.get(panicGoal)));
-    } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException e) {
-      e.printStackTrace();
-    }
+    nmsEntity.goalSelector.a(panicGoal);
+    nmsEntity.goalSelector.a(panicGoalWrapper.h(), new PathfinderGoalAvoidDamager(nmsEntity, 9F, nmsEntity.getAttributeMap().a(GenericAttributes.MOVEMENT_SPEED).getValue() * 5.5));
   }
 }
