@@ -14,6 +14,8 @@ import net.minecraft.server.v1_16_R2.EntityWolf;
 /**
  * Villagers have a small chance of generating with a tamed dog
  * {@link https://www.reddit.com/r/minecraftsuggestions/comments/51wvce/villagers_should_rarely_spawn_with_tamed_wolves/}
+ * <b>Broken:</b> Spawned dogs are rendered sitting, although they are technically
+ * not.
  */
 public class VillagerDogs implements Listener {
   @EventHandler
