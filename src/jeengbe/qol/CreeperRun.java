@@ -14,7 +14,7 @@ import net.minecraft.server.v1_16_R2.EntityCreature;
 import net.minecraft.server.v1_16_R2.GenericAttributes;
 
 /**
- * Mobs run away from exploding creepers
+ * Mobs run away from exploding Creepers
  */
 public class CreeperRun implements Listener {
   @EventHandler
