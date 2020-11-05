@@ -17,7 +17,7 @@ public class PathfinderGoalAvoidDamager extends PathfinderGoal {
   protected double             b;
   protected PathEntity         pathEntity;
   protected NavigationAbstract navigationAbstract;
-  private int                  timeToReaclcPath;
+  protected int                timeToReaclcPath;
 
   public PathfinderGoalAvoidDamager(EntityCreature entity, float avoidDistance, double avoidSpeed) {
     this.entity             = entity;
@@ -40,8 +40,8 @@ public class PathfinderGoalAvoidDamager extends PathfinderGoal {
       target = RandomPositionGenerator.c(this.entity, 16, 7, this.entity.getLastDamager().getPositionVector());
       if (target == null)
         return false;
-      if (c++ > 100)
-        throw new RuntimeException("c > 100");
+      if (c++ > 1000)
+        throw new RuntimeException("c > 1000");
     } while (this.entity.getLastDamager().h(target.x, target.y, target.z) < this.entity.h(this.entity.getLastDamager()));
 
     this.pathEntity = this.navigationAbstract.a(target.x, target.y, target.z, 0);
