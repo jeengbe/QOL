@@ -12,6 +12,10 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+/**
+ * Throwing a Splash Water Bottle in the Nether cast a smoke explosion
+ * {@link https://www.reddit.com/r/minecraftsuggestions/comments/hpq33e/water_acting_as_a_smoke_grenade_in_the_nether/}
+ */
 public class NetherSmokeGrenade implements Listener {
   @EventHandler
   public void onSplash(ProjectileHitEvent e) {
